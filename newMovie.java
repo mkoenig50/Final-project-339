@@ -1,9 +1,9 @@
 //NewMovies are more popular and so cost more baseline and have more severe late penalties.
 class NewMovie extends Movie
 {
-  NewMovie()
+  NewMovie(String newTitle)
   {
-    super();
+    super(newTitle);
     cost = 5.00;
   }
 

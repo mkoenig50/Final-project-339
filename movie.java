@@ -3,10 +3,11 @@ class Movie
 {
   Private boolean available;
   Private double cost = 3.00;
-
-  Movie()
+  Private String title;
+  Movie(String newTitle)
   {
     available = true;
+    title = newTitle;
   }
 
   Public boolean isAvailable()

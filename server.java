@@ -15,8 +15,31 @@ import javax.swing.JFrame;
 
 class Server
 {
+  private ArrayList<String> movies;
+
   public static void main(String[] args) throws IOException
   {
+    //Build the list of movies
+    Scanner movieScanner = new Scanner("Movies.txt");
+    String line;
+    while(movieScanner.hasNext())
+    {
+      line = movieScanner.nextLine();
+      String[] lineSplit = line.split(";");
+      switch(lineSplit[0])
+      {
+        case "0":
+          movies.add(new KidMovie(lineSplit[1]));
+          break;
+        case "1":
+          movies.add(new NewMovie(lineSplit[1]));
+          break;
+        case "2":
+          movies add(new Movie(lineSplit[1]));
+          break;
+      }
+    }
+    
     ServerSocket server = null;
     int clientNum = 0;
     ArrayList<ConnectionToClient> connections = new ArrayList<ConnectionToClient>();
