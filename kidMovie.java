@@ -6,4 +6,9 @@ class KidMovie extends Movie
     super(newTitle);
     cost = 1.50;
   }
+
+  Public String getType()
+  {
+    return "Kids";
+  }
 }

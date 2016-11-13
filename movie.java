@@ -4,10 +4,12 @@ class Movie
   Private boolean available;
   Private double cost = 3.00;
   Private String title;
+  Private string rentedTo;
   Movie(String newTitle)
   {
     available = true;
     title = newTitle;
+    rentedTo = "";
   }
 
   Public boolean isAvailable()
@@ -15,9 +17,14 @@ class Movie
     return available;
   }
 
-  Public void checkout()
+  Public String rentedBy()
+  {
+    return rentedTo;
+  }
+  Public void checkout(String name)
   {
     available = false;
+    rentedTo = name;
   }
 
   Public int rentalCost(int days)
@@ -32,6 +39,10 @@ class Movie
     }
   }
 
+  Public String getType()
+  {
+    return "Regular";
+  }
   Public void returnMovie()
   {
     available = true;

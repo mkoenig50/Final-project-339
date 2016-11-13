@@ -18,4 +18,9 @@ class NewMovie extends Movie
       return (cost * 3) + (cost * 2 * (days - 2));
     }
   }
+
+  Public String getType()
+  {
+    return "New";
+  }
 }

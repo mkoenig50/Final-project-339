@@ -35,11 +35,11 @@ class Server
           movies.add(new NewMovie(lineSplit[1]));
           break;
         case "2":
-          movies add(new Movie(lineSplit[1]));
+          movies.add(new Movie(lineSplit[1]));
           break;
       }
     }
-    
+
     ServerSocket server = null;
     int clientNum = 0;
     ArrayList<ConnectionToClient> connections = new ArrayList<ConnectionToClient>();
@@ -72,7 +72,7 @@ class Server
 
         //Spawn a thread to handle the client
         System.out.println("Client connected to the server.");
-        Thread t = new Thread(new ClientHandler(client, connections));
+        Thread t = new Thread(new ClientHandler(client, connections, movies));
         t.start();
       }
       catch(IOException e)
@@ -87,11 +87,13 @@ class Server
   {
     Socket s;
     ArrayList<ConnectionToClient> connections;
+    ArrayList<Movie> inventory;
 
-    ClientHandler(Socket s, ArrayList<ConnectionToClient> clientCons)
+    ClientHandler(Socket s, ArrayList<ConnectionToClient> clientCons, ArrayList<Movie> movies)
     {
       this.s = s;
       connections = clientCons;
+      inventory = movies;
     }
 
     //This is where we will process the client requests,
