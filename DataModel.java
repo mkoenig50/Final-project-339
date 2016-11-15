@@ -1,4 +1,4 @@
-package portfolio1;
+package finalproject;
 
 import java.util.ArrayList;
 
@@ -6,20 +6,20 @@ import javax.swing.AbstractListModel;
 
 //Look at example 6 for Add/Remove code
 @SuppressWarnings("serial")
-public class DataModel<E> extends AbstractListModel<E> 
+public class DataModel<E> extends AbstractListModel<E>
 {
 
 	public ArrayList<E> arrListData = new ArrayList<E>();
-	
+
 	@Override
-	public E getElementAt(int index) 
-	{		
+	public E getElementAt(int index)
+	{
 		return arrListData.get(index);
 	}
 
 	@Override
-	public int getSize() 
-	{		
+	public int getSize()
+	{
 		return arrListData.size();
 	}
 
@@ -28,11 +28,11 @@ public class DataModel<E> extends AbstractListModel<E>
 		arrListData.add(newItem);
 		this.fireIntervalAdded(this,  arrListData.size() - 1, arrListData.size() - 1);
 	}
-	
+
 	public void removeItem(int index)
 	{
 		arrListData.remove(index);
 		this.fireIntervalRemoved(this,  arrListData.size() - 1, arrListData.size() - 1);
 	}
-	
+
 }
