@@ -1,0 +1,13 @@
+Facade Pattern
+- Both the server class and client class represent subsystems that make up the
+functionality of the program.
+
+Iterator Pattern
+- In order to send a message or update from the server to the clients, it
+iterates through a list of clients to find the intended target, or to send the
+same message to all clients in the case of a user logging in or out.
+
+Observer Pattern
+- The server creates a thread for each client created to listen for messages
+used to update other clients.  Each client has a thread to listen for messages
+from the server.
